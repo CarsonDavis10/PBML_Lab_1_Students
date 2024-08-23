@@ -1,39 +1,158 @@
-import pandas as pd
-import START_Lab_1 as user_input_file
+from START_Lab_1 import lab1Question1, lab1Question2, lab1Question3, lab1Question4, lab1Question5, lab1Question6
 import pytest
-import urllib.request
-import util_tests
 
-#correct_url = "https://github.com/AkeemSemper/Programming_Basics_for_ML/raw/main/course_material/labs/lab1/SAMP_SOL_responses.csv"
-#correct_file = urllib.request.urlretrieve(correct_url, "SAMP_SOL_responses.csv")
-df_correct = pd.read_csv("SAMP_SOL_responses.csv")
-#df_correct = pd.read_csv("SAMP_SOL_responses.csv")
+def test_lab1Question1():
+    # Test case 1
+    input_gb = 10
+    expected_bytes = 10 * 1024 * 1024 * 1024
+    assert lab1Question1(input_gb) == expected_bytes
 
+    # Test case 2
+    input_gb = 0
+    expected_bytes = 0
+    assert lab1Question1(input_gb) == expected_bytes
 
+    # Test case 3
+    input_gb = 1
+    expected_bytes = 1 * 1024 * 1024 * 1024
+    assert lab1Question1(input_gb) == expected_bytes
 
-# Download the file from correct_url
+    # Test case 4
+    input_gb = 100
+    expected_bytes = 100 * 1024 * 1024 * 1024
+    assert lab1Question1(input_gb) == expected_bytes
 
+    # Test case 5
+    input_gb = -5
+    expected_bytes = -5 * 1024 * 1024 * 1024
+    assert lab1Question1(input_gb) == expected_bytes
 
-#Q1
-test_list_1 = df_correct[df_correct["Question"] == 1]
-tests_1 = []
-for index, row in test_list_1.iterrows():
-    test_input = row["Input"]
-    expected = row["Expected_Output"]
-    tests_1.append((test_input, expected))
+def test_lab1Question2():
+    # Test case 1
+    name = "John"
+    assert lab1Question2(name) == True
 
-@pytest.mark.parametrize("test_input, expected", tests_1, ids=[f"Test {i+1}" for i in range(len(tests_1))])
-def test_lab1Question1(test_input, expected):
-    assert user_input_file.lab1Question1(test_input) == expected
+    # Test case 2
+    name = "Jane"
+    assert lab1Question2(name) == False
 
-#Q2
-test_list_2 = df_correct[df_correct["Question"] == 2]
-tests_2 = []
-for index, row in test_list_2.iterrows():
-    test_input = row["Input"]
-    expected = row["Expected_Output"]
-    tests_2.append((test_input, expected))
+    # Test case 3
+    name = "Alice"
+    assert lab1Question2(name) == True
 
-@pytest.mark.parametrize("test_input, expected", tests_2)
-def test_lab1Question2(test_input, expected):
-    assert user_input_file.lab1Question2(test_input) == expected
+    # Test case 4
+    name = "Bob"
+    assert lab1Question2(name) == False
+
+    # Test case 5
+    name = ""
+    assert lab1Question2(name) == False
+
+def test_lab1Question3():
+    # Test case 1
+    input_string = "Hello"
+    input_number = 0
+    assert lab1Question3(input_string, input_number) == "H"
+
+    # Test case 2
+    input_string = "World"
+    input_number = 2
+    assert lab1Question3(input_string, input_number) == "r"
+
+    # Test case 3
+    input_string = "Python"
+    input_number = 10
+    assert lab1Question3(input_string, input_number) == -1
+
+    # Test case 4
+    input_string = "AI"
+    input_number = 1
+    assert lab1Question3(input_string, input_number) == "I"
+
+    # Test case 5
+    input_string = "Programming"
+    input_number = 5
+    assert lab1Question3(input_string, input_number) == "a"
+
+def test_lab1Question4():
+    # Test case 1
+    file_name = "test_file1.txt"
+    expected_list = [1, 2, 3, 4, 5]
+    assert lab1Question4(file_name) == expected_list
+
+    # Test case 2
+    file_name = "test_file2.txt"
+    expected_list = [10, 20, 30, 40, 50]
+    assert lab1Question4(file_name) == expected_list
+
+    # Test case 3
+    file_name = "test_file3.txt"
+    expected_list = []
+    assert lab1Question4(file_name) == expected_list
+
+    # Test case 4
+    file_name = "test_file4.txt"
+    expected_list = [100, 200, 300, 400, 500]
+    assert lab1Question4(file_name) == expected_list
+
+    # Test case 5
+    file_name = "test_file5.txt"
+    expected_list = [1, 3, 5, 7, 9]
+    assert lab1Question4(file_name) == expected_list
+
+def test_lab1Question5():
+    # Test case 1
+    list_numbers = [1, 2, 3, 4, 5]
+    assert lab1Question5(list_numbers) == 1
+
+    # Test case 2
+    list_numbers = [10, 20, 30, 40, 50]
+    assert lab1Question5(list_numbers) == 10
+
+    # Test case 3
+    list_numbers = [1, 1, 2, 2, 3, 3, 3]
+    assert lab1Question5(list_numbers) == 3
+
+    # Test case 4
+    list_numbers = [100, 200, 300, 400, 500]
+    assert lab1Question5(list_numbers) == 100
+
+    # Test case 5
+    list_numbers = [1, 1, 1, 1, 1]
+    assert lab1Question5(list_numbers) == 1
+
+def test_lab1Question6():
+    # Test case 1
+    quarters = 4
+    dimes = 3
+    nickels = 2
+    pennies = 1
+    assert lab1Question6(quarters, dimes, nickels, pennies) == 1.41
+
+    # Test case 2
+    quarters = 0
+    dimes = 0
+    nickels = 0
+    pennies = 0
+    assert lab1Question6(quarters, dimes, nickels, pennies) == 0
+
+    # Test case 3
+    quarters = 10
+    dimes = 5
+    nickels = 2
+    pennies = 1
+    assert lab1Question6(quarters, dimes, nickels, pennies) == 3.15
+
+    # Test case 4
+    quarters = 1
+    dimes = 1
+    nickels = 1
+    pennies = 1
+    assert lab1Question6(quarters, dimes, nickels, pennies) == 0.41
+
+    # Test case 5
+    quarters = 2
+    dimes = 0
+    nickels = 0
+    pennies = 5
+    assert lab1Question6(quarters, dimes, nickels, pennies) == 0.55
