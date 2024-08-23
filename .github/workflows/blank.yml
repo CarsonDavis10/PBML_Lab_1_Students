@@ -54,8 +54,7 @@ jobs:
           cp -r Programming_Basics_for_ML/course_material/labs/lab1/* .
           rm -f SAMP_SOL*
           rm -f generate_tests.ipynb
-          mv yml_files/classroom.yml ./github/workflows/
-          #ls -la workbooks
+          ls -la
 
           # Clear
           rm -rf Programming_Basics_for_ML
