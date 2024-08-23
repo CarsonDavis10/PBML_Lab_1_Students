@@ -28,7 +28,7 @@ jobs:
       - name: Open Original Repository
         uses: actions/checkout@v4
         with:
-          repository: 'AkeemSemperDataScience/PMBL_Lab_1_Students'
+          repository: 'AkeemSemperDataScience/PBML_Lab_1_Students'
           ref: 'main'
 
           #token: ${{ secrets.GH_PAT }}
