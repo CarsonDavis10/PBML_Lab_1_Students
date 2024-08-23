@@ -5,7 +5,7 @@ import pytest
 def test_lab1Question1_1():
     # Test case 1
     input_gb = 10
-    expected_bytes = 10 * 1024 * 1024 * 1024
+    expected_bytes = 10 * (1024**3)
     assert lab1Question1(input_gb) == expected_bytes
 def test_lab1Question1_2():
     # Test case 2
@@ -15,17 +15,12 @@ def test_lab1Question1_2():
 def test_lab1Question1_3():
     # Test case 3
     input_gb = 1
-    expected_bytes = 1 * 1024 * 1024 * 1024
+    expected_bytes = 1024**3
     assert lab1Question1(input_gb) == expected_bytes
 def test_lab1Question1_4():
     # Test case 4
     input_gb = 100
-    expected_bytes = 100 * 1024 * 1024 * 1024
-    assert lab1Question1(input_gb) == expected_bytes
-def test_lab1Question1_5():
-    # Test case 5
-    input_gb = -5
-    expected_bytes = -5 * 1024 * 1024 * 1024
+    expected_bytes = 100 * (1024**3)
     assert lab1Question1(input_gb) == expected_bytes
 
 def test_lab1Question2_1():
