@@ -72,12 +72,12 @@ def test_lab1Question3_5():
 
 def test_lab1Question4_1():
     # Test case 1
-    file_name = "yml_files/test_file1.txt"
+    file_name = ".github/test_file1.txt"
     expected_list = [1, 2, 3, 4, 5]
     assert lab1Question4(file_name) == expected_list
 def test_lab1Question4_2():
     # Test case 2
-    file_name = "yml_files/test_file2.txt"
+    file_name = ".github/test_file2.txt"
     expected_list = [10, 20, 30, 40, 50]
     assert lab1Question4(file_name) == expected_list
 
