@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-      pages: write
+      #pages: write
 
     steps:
       - name: Copy Environment Variables
@@ -55,7 +55,7 @@ jobs:
           cp -r Programming_Basics_for_ML/course_material/labs/lab1/* .
           rm -f SAMP_SOL*
           rm -f generate_tests.ipynb
-          cp yml_files/classroom.yml .github/workflows
+          sudo cp yml_files/classroom.yml .github/workflows
           ls -la
 
           # Clear
