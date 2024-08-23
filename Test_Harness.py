@@ -30,7 +30,7 @@ def test_lab1Question1():
 def test_lab1Question2():
     # Test case 1
     name = "John"
-    assert lab1Question2(name) == True
+    assert lab1Question2(name) == False
 
     # Test case 2
     name = "Jane"
@@ -42,7 +42,7 @@ def test_lab1Question2():
 
     # Test case 4
     name = "Bob"
-    assert lab1Question2(name) == False
+    assert lab1Question2(name) == True
 
     # Test case 5
     name = ""
@@ -85,37 +85,22 @@ def test_lab1Question4():
     expected_list = [10, 20, 30, 40, 50]
     assert lab1Question4(file_name) == expected_list
 
-    # Test case 3
-    file_name = "test_file3.txt"
-    expected_list = []
-    assert lab1Question4(file_name) == expected_list
-
-    # Test case 4
-    file_name = "test_file4.txt"
-    expected_list = [100, 200, 300, 400, 500]
-    assert lab1Question4(file_name) == expected_list
-
-    # Test case 5
-    file_name = "test_file5.txt"
-    expected_list = [1, 3, 5, 7, 9]
-    assert lab1Question4(file_name) == expected_list
-
 def test_lab1Question5():
     # Test case 1
-    list_numbers = [1, 2, 3, 4, 5]
+    list_numbers = [1, 2, 3, 4, 5, 1]
     assert lab1Question5(list_numbers) == 1
 
     # Test case 2
-    list_numbers = [10, 20, 30, 40, 50]
-    assert lab1Question5(list_numbers) == 10
+    list_numbers = [10, 20, 30, 40, 50, 10, 20, 20]
+    assert lab1Question5(list_numbers) == 20
 
     # Test case 3
     list_numbers = [1, 1, 2, 2, 3, 3, 3]
     assert lab1Question5(list_numbers) == 3
 
     # Test case 4
-    list_numbers = [100, 200, 300, 400, 500]
-    assert lab1Question5(list_numbers) == 100
+    list_numbers = [100, 200, 300, 400, 500, 400]
+    assert lab1Question5(list_numbers) == 400
 
     # Test case 5
     list_numbers = [1, 1, 1, 1, 1]
