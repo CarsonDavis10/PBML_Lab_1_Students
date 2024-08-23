@@ -53,6 +53,7 @@ jobs:
           #rm -rf
           cp -r Programming_Basics_for_ML/course_material/labs/lab1/* .
           rm -f SAMP_SOL*
+          rm -f generate_tests.ipynb
           #ls -la workbooks
 
           # Clear
